@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula-19</title>
+</head>
+<body>
+    <script>
+        document.writeln("Olá mundo!");
+    </script>
+    <h1>JavaScript</h1>
+    <hr>
+    <div id="resposta"></div>
+    <br>
+    <div>
+        <input id="Usuario" type="text" size="60">
+        <button onclick="validarUsuario()">Validar</button>
+    </div>
+    <br>
+    <script>
+        function validarUsuario() {
+            var nomeUsuario = document.getElementById("Usuario").value;
+            window.alert("Alerta");
+            if (nomeUsuario === "administrador") {
+                window.alert("É o administrador");
+            } else {
+                window.alert("Não é o administrador, tente novamente!");
+            }
+        }
+
+    
+    </script>
+</body>
+</html>

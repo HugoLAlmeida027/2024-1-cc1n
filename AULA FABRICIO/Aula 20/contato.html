@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="./imagens/flamengo.jpg" alt="flamengo">
+            <nav>
+                <a href="#login">Login</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="contato">
+            <h1>Contato</h1>
+            <div>
+                <span id="Login">Login</span>
+                <input id="usuario" type="email">
+                <span>Senha</span>
+                <input id="senha" type="password">
+                <button onclick="validarusuario()">Enviar</button>
+                <button onclick="cancelar()">Cancelar</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const adm = "adm@gmail.com";
+        const psw = "adm123";
+
+        function validarusuario() {
+            var nomeusuario = document.getElementById("usuario").value;
+            var senhausuario = document.getElementById("senha").value;
+            
+            if (nomeusuario === adm && senhausuario === psw) {
+                window.alert("É o administrador");
+            } else {
+                window.alert("Não é o administrador");
+            }
+        }
+
+        function cancelar() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
