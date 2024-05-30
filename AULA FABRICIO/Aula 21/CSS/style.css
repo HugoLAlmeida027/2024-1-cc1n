@@ -1,0 +1,17 @@
+header{
+    display:flex;
+    justify-content: center;
+}
+#dia{
+    width: 40px;
+}
+#Mes{
+    width: 100px;
+}
+#ano{
+    width: 80px;
+}
+#pt2{
+  
+
+}

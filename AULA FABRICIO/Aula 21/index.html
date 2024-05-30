@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Idade</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Calculadora de Idade</h1>
+        </div>
+    </header>
+    <div>  
+        <span>Data de Nascimento</span>
+        <input id="dia" type="number" placeholder="Dia">
+        <select name="Mes" id="Mes">
+            <optgroup label="Mês"></optgroup>
+            <option value="0">Janeiro</option>
+            <option value="1">Fevereiro</option>
+            <option value="2">Março</option>
+            <option value="3">Abril</option>
+            <option value="4">Maio</option>
+            <option value="5">Junho</option>
+            <option value="6">Julho</option>
+            <option value="7">Agosto</option>
+            <option value="8">Setembro</option>
+            <option value="9">Outubro</option>
+            <option value="10">Novembro</option>
+            <option value="11">Dezembro</option>
+        </select>
+        <input id="ano" type="number" placeholder="Ano">
+    </div>
+    <button onclick="Calcular()">Calcular Idade</button>
+    <p id="idade"></p>
+    <script>
+        function Calcular() {
+            var dia = document.getElementById("dia").value;
+            var mes = document.getElementById("Mes").value;
+            var ano = document.getElementById("ano").value;
+            var hoje = new Date();
+            var idade = hoje.getFullYear() - dataNascimento.getFullYear();
+            var m = hoje.getMonth() - dataNascimento.getMonth();
+            
+            if (m < 0 || (m === 0 && hoje.getDate() < dataNascimento.getDate())) {
+                idade--;
+            }
+
+            var idadeTexto = dia && mes && ano ? "Essa é a sua idade: " + idade : "Por favor, preencha todos os campos.";
+            document.getElementById("idade").innerText = idadeTexto;
+        }
+    </script>
+         <header>
+            <h1>Calculadora de Equações</h1>
+        </header>
+        <div id="pt2"> 
+            <input type="number" id="n1" placeholder="Número 1">
+            <input type="number" id="n2" placeholder="Número 2">
+            <select id="Equacoes">
+                <optgroup label="Equações"></optgroup>
+                <option value="01">Adição</option>
+                <option value="02">Subtração</option>
+                <option value="03">Multiplicação</option>
+                <option value="04">Divisão</option>
+            </select>
+            <button onclick="Calcular()">Calcular</button>
+            <p id="resposta"></p>
+        </div>
+        <script>
+            function Calcular(){
+                var n1 = parseFloat(document.getElementById("n1").value);
+                var n2 = parseFloat(document.getElementById("n2").value);
+                var operacao = document.getElementById("Equacoes").value;
+                var resultado;
+    
+                switch(operacao){
+                    case "01":
+                        resultado = n1 + n2;
+                        break;
+                    case "02":
+                        resultado = n1 - n2;
+                        break;
+                    case "03":
+                        resultado = n1 * n2;
+                        break;
+                    case "04":
+                        if (n2 !== 0) {
+                            resultado = n1 / n2;
+                        } else {
+                            resultado = "Divisão por zero não é permitida";
+                        }
+                        break;
+                    default:
+                        resultado = "Operação inválida";
+                }
+                document.getElementById("resposta").innerText = "Essa é a sua resposta: " + resultado;
+            }
+        </script>
+    </div>
+</body>
+</html>
